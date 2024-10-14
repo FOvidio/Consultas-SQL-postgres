@@ -1,0 +1,6 @@
+----Listar duplicados em uma tabela---
+
+    select * from prodfor p1
+		where (select count(*) from prodfor p2
+		where p1.idproduto = p2.idproduto) > 1
+		order by idproduto  
